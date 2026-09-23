@@ -1,0 +1,60 @@
+Express.js — Revision Notes
+1. Express.js & Basic Application
+Express.js is a lightweight web framework built on top of Node.js.
+It is mainly used to create web servers and REST APIs.
+It simplifies server-side development by providing routing, middleware, and request/response handling.
+
+Install Express using:
+
+npm install express
+
+Basic setup:
+
+const express = require("express");
+const app = express();
+
+app.listen(3000);
+2. Routing
+Routing means defining how the server responds to a particular URL and HTTP method.
+Express provides methods such as:
+GET → retrieve data
+POST → create data
+PUT → update complete data
+PATCH → update partial data
+DELETE → delete data
+
+Example:
+
+app.get("/users", (req, res) => {
+    res.send("All Users");
+});
+Here, when a GET request is made to /users, the route handler executes.
+3. Request & Response
+req represents the request received from the client.
+res represents the response sent by the server.
+Important request properties:
+req.body → data sent in request body
+req.params → dynamic values from URL
+req.query → query parameters
+req.headers → request headers
+
+Common response methods:
+
+res.send()
+res.json()
+res.status()
+4. Middleware
+Middleware is a function that runs between the request and the final response.
+It can perform tasks such as authentication, logging, validation, and parsing request data.
+
+Middleware receives:
+
+(req, res, next)
+next() passes control to the next middleware or route handler.
+
+Example:
+
+app.use((req, res, next) => {
+    console.log("Request received");
+    next();
+});
