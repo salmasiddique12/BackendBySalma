@@ -1,0 +1,56 @@
+1. NPM
+
+NPM = Node Package Manager
+Used to install, uninstall & manage Node.js packages.
+
+2. Install / Uninstall
+
+npm i packageName
+npm uninstall packageName
+
+3. Specific Version
+npm i packageName@1.2.3
+
+
+4. node_modules
+Contains installed packages.
+Usually not pushed to GitHub.
+Can recreate using npm install.
+
+5. package.json
+Contains:
+Project information
+dependencies
+devDependencies
+scripts
+
+6. Dependencies
+Packages required to run the application.
+
+npm i express
+7. DevDependencies
+
+Packages required mainly for development.
+
+npm i nodemon -D
+8. package-lock.json
+Locks/resolves exact dependency versions.
+Helps maintain consistent installations.
+9. NPM Scripts
+"scripts": {
+  "start": "node app.js",
+  "dev": "nodemon app.js"
+}
+
+
+Run:
+npm start
+npm run dev
+10. Important Commands
+npm init -y              // create package.json
+npm install              // install dependencies
+npm i express             // install package
+npm i express@4.18.2      // specific version
+npm uninstall express    // remove package
+npm i nodemon -D          // dev dependency
+npm run dev              // custom script
